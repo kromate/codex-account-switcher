@@ -1,0 +1,13 @@
+# Release archives and local staging
+*.zip
+release/
+staging/
+dist/
+
+# macOS metadata
+.DS_Store
+.AppleDouble
+._*
+
+# Debug symbols
+*.dSYM/
