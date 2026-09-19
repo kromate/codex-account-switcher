@@ -35,3 +35,12 @@ The distributed app bundle contains no saved accounts. Your accounts and authent
 
 Open an issue in the [GitHub repository](https://github.com/kromate/codex-account-switcher/issues) with a short description and the macOS version. You can also find the project portfolio at [kromate.dev/#apps](https://kromate.dev/#apps).
 
+## Verify the download
+
+Download `SHA256SUMS.txt` beside the ZIP and run this command in that directory:
+
+```bash
+shasum -a 256 -c SHA256SUMS.txt
+```
+
+A matching download prints `OK`.
