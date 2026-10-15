@@ -29,9 +29,9 @@ Quit **Codex Account Switcher** from its menu bar menu, download the latest ZIP,
 
 ## macOS Keychain access
 
-Saved logins stay in your Mac’s Keychain. The app requests access to **Codex Switcher — Saved account**. Enter your own Mac login Keychain password in the native macOS dialog, never in a chat or support message. Older entries may still display the original internal service identifier on their first access.
+Saved logins stay in your Mac’s Keychain. The app requests access to **Codex Switcher — Saved account**. Enter your own Mac login Keychain password in the native macOS dialog, never in a chat or support message. Older entries may retain their original internal service identifier until explicitly saved again. Reading accounts does not rewrite their labels.
 
-Version 3.3.18 reuses granted account credentials in memory for the current app session, rather than repeatedly requesting them during Refresh, Warm accounts, and switching. A denied request stops automatic retries; use **Reload saved accounts** when ready to try again. No plaintext credential cache is written to disk.
+Version 3.3.18 reuses granted account credentials in memory for the current app session, rather than repeatedly requesting them during Refresh, Warm accounts, and switching. A denied request stops automatic retries; use **Reload saved accounts** when ready to try again. No plaintext credential cache is written to disk. Reading accounts and refreshing usage do not update Keychain labels or save credentials in the background.
 
 macOS may still ask once for each saved account, when Keychain is locked, or after an app update. **Allow** grants the requested access; **Always Allow** trusts that app for the item, if you choose to grant it. Ad hoc signing cannot guarantee that trust carries over to a new build.
 
