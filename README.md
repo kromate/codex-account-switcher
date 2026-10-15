@@ -6,9 +6,9 @@ This repository contains the macOS download and installation guide. Application 
 
 ## Release
 
-- Release: `v3.3.17`
+- Release: `v3.3.18`
 - Artifact: `Codex-Account-Switcher-macOS-Apple-Silicon.zip`
-- Bundle version: `3.3` (build `17`)
+- Bundle version: `3.3` (build `18`)
 - Architecture: Apple Silicon (`arm64`)
 - Minimum macOS: `14.0`
 
@@ -21,11 +21,19 @@ The app is an independent utility. It is not affiliated with or endorsed by Open
 3. Drag **Codex Account Switcher.app** to **Applications**.
 4. Open the app from **Applications**.
 
-The distributed app is ad hoc signed and is not Apple-notarized. macOS may block the first launch. If that happens, open **System Settings**, choose **Privacy & Security**, and approve the app there.
+**Distribution status:** this is a community build, ad hoc signed and not Apple-notarized. It is not a Developer ID-signed production release. macOS may block the first launch. If that happens, open **System Settings**, choose **Privacy & Security**, and approve the app there.
 
 ## Update an existing installation
 
 Quit **Codex Account Switcher** from its menu bar menu, download the latest ZIP, and replace the app in **Applications**. Open the replacement app. Saved accounts stay in macOS Keychain; replacing the app does not remove them. macOS may ask you to allow the updated app to access them.
+
+## macOS Keychain access
+
+Saved logins stay in your Mac’s Keychain. The app requests access to **Codex Switcher — Saved account**. Enter your own Mac login Keychain password in the native macOS dialog, never in a chat or support message. Older entries may still display the original internal service identifier on their first access.
+
+Version 3.3.18 reuses granted account credentials in memory for the current app session, rather than repeatedly requesting them during Refresh, Warm accounts, and switching. A denied request stops automatic retries; use **Reload saved accounts** when ready to try again. No plaintext credential cache is written to disk.
+
+macOS may still ask once for each saved account, when Keychain is locked, or after an app update. **Allow** grants the requested access; **Always Allow** trusts that app for the item, if you choose to grant it. Ad hoc signing cannot guarantee that trust carries over to a new build.
 
 ## Warm accounts
 
